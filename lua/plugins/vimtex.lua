@@ -1,20 +1,22 @@
 return {
   "lervag/vimtex",
   init = function()
-    -- vim.g['vimtex_view_method'] = 'zathura'     -- main variant with xdotool (requires X11; not compatible with wayland)
-    vim.g['vimtex_view_method'] = 'zathura_simple' -- for variant without xdotool to avoid errors in wayland
-    vim.g['vimtex_quickfix_mode'] = 0              -- suppress error reporting on save and build
-    vim.g['vimtex_mappings_enabled'] = 0           -- Ignore mappings
-    vim.g['vimtex_indent_enabled'] = 0             -- Auto Indent
-    vim.g['tex_flavor'] = 'latex'                  -- how to read tex files
-    vim.g['tex_indent_items'] = 0                  -- turn off enumerate indent
-    vim.g['tex_indent_brace'] = 0                  -- turn off brace indent
-    vim.g['vimtex_context_pdf_viewer'] = 'okular'  -- external PDF viewer run from vimtex menu command
-    vim.g['vimtex_log_ignore'] = ({                -- Error suppression:
+    vim.g['vimtex_view_method'] = 'zathura_simple' -- Use zathura_simple for compatibility with Wayland
+    vim.g['vimtex_quickfix_mode'] = 0              -- Suppress error reporting on save and build
+    vim.g['vimtex_mappings_enabled'] = 0           -- Disable default mappings
+    vim.g['vimtex_indent_enabled'] = 0             -- Disable auto indenting
+    vim.g['tex_flavor'] = 'latex'                  -- Set LaTeX as the TeX flavor
+    vim.g['tex_indent_items'] = 0                  -- Disable indenting of items in enumerate
+    vim.g['tex_indent_brace'] = 0                  -- Disable brace indenting
+    vim.g['vimtex_context_pdf_viewer'] = 'zathura'
+    vim.g['vimtex_log_ignore'] = {                 -- Suppress specific LaTeX warnings
       'Underfull',
       'Overfull',
       'specifier changed to',
       'Token not allowed in a PDF string',
-    })
+    }
+    vim.keymap.set('n', '<leader>b', ':VimtexCompile<CR>', {})
+    vim.keymap.set('n',  '<leader>vp', ':VimtexView<CR>', {})
   end,
 }
+
