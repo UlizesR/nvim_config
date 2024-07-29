@@ -9,7 +9,7 @@ opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
 
-opt.wrap = false
+--opt.wrap = false
 
 opt.ignorecase = true
 opt.smartcase = true
