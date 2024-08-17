@@ -13,7 +13,12 @@ return {
                     "python",
                     "vim",
                     "markdown",
-                    "markdown_inline"
+                    "markdown_inline",
+                    "json",
+                    "javascript",
+                    "typescript",
+                    "html",
+                    "css"
                 },
                 highlight = { enable = true },
                 indent = { enable = true },

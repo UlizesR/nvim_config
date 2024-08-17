@@ -22,7 +22,19 @@ return {
         },
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "clangd", "basedpyright", "julials", "jdtls" }
+                ensure_installed = {
+                    "lua_ls",
+                    "clangd",
+                    "basedpyright",
+                    "julials",
+                    "jdtls",
+                    "typescript-language-server",
+                    "jsonls",
+                    "html",
+                    "cssls",
+                    "tsserver",
+                    "asm-lsp"
+                }
             })
         end
     },
@@ -40,6 +52,13 @@ return {
 
             lspconfig.clangd.setup({
                 capabilities = cmp_capabilities,
+                filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
+                cmd = { "clangd", "--background-index" , "--clang-tidy", "--header-insertion=iwyu", "--suggest-missing-includes", "--cross-file-rename", "--function-arg-placeholders", "fallback-style=llvm", "-std=c++17" },
+                options = {
+                    clangdFileStatus = true,
+                    usePlaceholders = true,
+                    completeUnimported = true,
+                },
             })
             lspconfig.basedpyright.setup({
                 capabilities = cmp_capabilities,
