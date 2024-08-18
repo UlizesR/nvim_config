@@ -45,6 +45,17 @@ return {
         -- Optional: Bind the command to a key combination with a description
         vim.keymap.set('n', '<leader>sk', ':ShowKeymaps<CR>', { noremap = true, silent = true, desc = "Show all keymaps" })
 
+        -- Function to use copilot chat 
+        local function copilot_chat()
+            local opts = {
+                layout_strategy = 'vertical',
+                layout_config = { width = 0.75 },
+            }
+            require('telescope').extensions['ui-select'].ui_select(opts)
+        end
+
+        -- Command to show copilot chat
+        vim.api.nvim_create_user_command('CopilotChat', copilot_chat, {})
+        vim.keymap.set('n', '<leader>cch', ':CopilotChat<CR>', { noremap = true, silent = true, desc = "Copilot Chat" })
     end,
 }
-
