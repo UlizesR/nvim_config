@@ -26,7 +26,8 @@ return {
                 }
             },
         })
-        vim.keymap.set('n', '<leader>fs', ':Neotree filesystem reveal toggle<CR>', {})
+        vim.keymap.set('n', '<leader>fs', ':Neotree filesystem reveal left<CR>', { noremap = true, silent = true, desc = "Open/switch to the filesystem view" })
+        vim.keymap.set('n', '<leader>ft', ':Neotree toggle<CR>', { noremap = true, silent = true, desc = "Toggle the filesystem view" })
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
     end

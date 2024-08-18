@@ -50,14 +50,14 @@ return {
             end,
         })
 
-        vim.api.nvim_set_keymap("n", "<leader>ta", ":$tabnew<CR>", { noremap = true })
-        vim.api.nvim_set_keymap("n", "<leader>tc", ":tabclose<CR>", { noremap = true })
-        vim.api.nvim_set_keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true })
-        vim.api.nvim_set_keymap("n", "<leader>tn", ":tabn<CR>", { noremap = true })
-        vim.api.nvim_set_keymap("n", "<leader>tp", ":tabp<CR>", { noremap = true })
+        vim.api.nvim_set_keymap("n", "<leader>ta", ":$tabnew<CR>", { noremap = true, desc = "New tab" })
+        vim.api.nvim_set_keymap("n", "<leader>tc", ":tabclose<CR>", { noremap = true, desc = "Close tab" })
+        vim.api.nvim_set_keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true, desc = "Close other tabs" })
+        vim.api.nvim_set_keymap("n", "<leader>tn", ":tabn<CR>", { noremap = true, desc = "Next tab" })
+        vim.api.nvim_set_keymap("n", "<leader>tp", ":tabp<CR>", { noremap = true, desc = "Previous tab" })
         -- move current tab to previous position
-        vim.api.nvim_set_keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
+        vim.api.nvim_set_keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true, desc = "Move tab to previous position" })
         -- move current tab to next position
-        vim.api.nvim_set_keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
+        vim.api.nvim_set_keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true, desc = "Move tab to next position" })
     end
 }

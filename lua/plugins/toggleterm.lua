@@ -4,7 +4,6 @@ return {
     config = function()
         require("toggleterm").setup({
             size = 15,
-            open_mapping = [[<c-\>]],
             shade_terminals = true,
             hide_numbers = true,
             close_on_exit = true,
@@ -15,11 +14,18 @@ return {
                 width = 130,
                 height = 30,
             },
+            map_opts = {
+                insert = true,
+                noremap = true,
+                silent = true,
+                desc = "Toggle Terminal"
+            },
+            open_mapping = [[<C-`>]],
+            hide_numbers = true,
             shading_factor = '1',
             start_in_insert = true,
             persist_size = true,
             direction = 'horizontal'
         })
-        --vim.keymap.set('n', '<c-`>', ':ToggleTerm<CR>', {})
     end
 }

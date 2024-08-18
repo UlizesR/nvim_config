@@ -28,12 +28,11 @@ return {
                     "basedpyright",
                     "julials",
                     "jdtls",
-                    "typescript-language-server",
                     "jsonls",
                     "html",
                     "cssls",
                     "tsserver",
-                    "asm-lsp"
+                    "asm_lsp"
                 }
             })
         end
@@ -66,11 +65,32 @@ return {
             lspconfig.lua_ls.setup({
                 capabilities = cmp_capabilities,
             })
+            lspconfig.julials.setup({
+                capabilities = cmp_capabilities,
+            })
+            lspconfig.jdtls.setup({
+                capabilities = cmp_capabilities,
+            })
+            lspconfig.tsserver.setup({
+                capabilities = cmp_capabilities,
+            })
+            lspconfig.jsonls.setup({
+                capabilities = cmp_capabilities,
+            })
+            lspconfig.html.setup({
+                capabilities = cmp_capabilities,
+            })
+            lspconfig.cssls.setup({
+                capabilities = cmp_capabilities,
+            })
+            lspconfig.asm_lsp.setup({
+                capabilities = cmp_capabilities,
+            })
 
-            vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-            vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-            vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, { noremap = true, silent = true, desc = "Show Hover" })
+            vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { noremap = true, silent = true, desc = "Go to Definition" })
+            vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { noremap = true, silent = true, desc = "Show References" })
+            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { noremap = true, silent = true, desc = "Code Action" })
         end,
     },
 }
