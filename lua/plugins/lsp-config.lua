@@ -32,7 +32,8 @@ return {
                     "html",
                     "cssls",
                     "tsserver",
-                    "asm_lsp"
+                    "asm_lsp",
+                    "ast_grep"
                 }
             })
         end
