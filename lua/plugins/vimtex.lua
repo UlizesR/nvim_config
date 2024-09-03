@@ -8,7 +8,7 @@ return {
         vim.g['tex_flavor'] = 'latex'                  -- Set LaTeX as the TeX flavor
         vim.g['tex_indent_items'] = 0                  -- Disable indenting of items in enumerate
         vim.g['tex_indent_brace'] = 0                  -- Disable brace indenting
-        vim.g['vimtex_context_pdf_viewer'] = 'zathura'
+        vim.g['vimtex_context_pdf_viewer'] = 'zathura' -- Use zathura as the default PDF viewer
         vim.g['vimtex_log_ignore'] = {                 -- Suppress specific LaTeX warnings
             'Underfull',
             'Overfull',

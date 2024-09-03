@@ -3,6 +3,13 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = {
+        custom_highlights = function(colors)
+            return
+            {
+                AlphaShortcut = { fg = colors.red },
+                AlphaHeader = { fg = colors.lavender },
+            }
+        end,
         term_colors = true,
         transparent_background = true,
         dim_inactive = {
@@ -45,6 +52,7 @@ return {
             },
         },
     },
+
     config = function(_, opts)
         require("catppuccin").setup(opts)
         vim.cmd.colorscheme("catppuccin-macchiato")
